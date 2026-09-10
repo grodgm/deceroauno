@@ -154,7 +154,7 @@ header{display:flex;justify-content:space-between;align-items:center;padding:26p
 .metodo .encabezado em{font-style:italic}
 .reglas{margin-top:80px;display:grid;gap:0}
 .regla{
-  display:grid;grid-template-columns:minmax(90px,160px) 1fr;gap:30px;align-items:baseline;
+  display:grid;grid-template-columns:clamp(136px,18.6vw,264px) 1fr;gap:30px;align-items:baseline;
   padding:40px 0;border-top:1px solid rgba(255,255,255,.28);
 }
 .regla .n{
@@ -231,7 +231,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
   .precio-caja{grid-template-columns:1fr}
   .precio-intro{border-right:none;border-bottom:4px solid var(--tinta)}
   .precio-col + .precio-col{border-left:none;border-top:1px solid #dcdcdc}
-  .regla{grid-template-columns:70px 1fr;gap:18px}
+  .regla{gap:18px}
 }
 @media(max-width:520px){
   body{font-size:16px}

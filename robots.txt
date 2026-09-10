@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://deceroauno.com.ar/sitemap.xml

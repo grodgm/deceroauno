@@ -1,0 +1,37 @@
+{
+  "nombre": "Ortodoncia Salud",
+  "zona": "Belgrano, CABA",
+  "titular": "Tu mejor sonrisa empieza con una <em>consulta</em>",
+  "subtitulo": "Consultorio odontológico en el corazón de Belgrano. Especialistas con formación de posgrado y más de 20 años dedicados a la docencia universitaria y la atención de pacientes.",
+  "telefono": "4961-8116",
+  "whatsapp": "",
+  "direccion": "Ciudad de la Paz, Belgrano · CABA",
+  "transporte": "Subte D, estación Congreso de Tucumán. Colectivos 38, 41, 57, 59, 60, 68, 152, 161 y 194.",
+  "horarios": "Consultar horarios disponibles por teléfono o WhatsApp.",
+  "servicios_intro": "Atención integral en un mismo consultorio, con especialistas de posgrado en cada área.",
+  "color": "#0e7c86",
+  "color_oscuro": "#0a5a62",
+  "confianza": [
+    {"dato": "+20 años", "etiqueta": "de trayectoria y docencia universitaria"},
+    {"dato": "Posgrado", "etiqueta": "especialistas en cada rama"},
+    {"dato": "Belgrano", "etiqueta": "a metros del subte D"}
+  ],
+  "franja": [
+    "Especialistas con títulos de posgrado",
+    "Tecnología odontológica de avanzada",
+    "Ambiente cálido y atención personalizada"
+  ],
+  "servicios": [
+    {"nombre": "Ortodoncia", "descripcion": "Tratamientos para chicos y adultos, con seguimiento cercano de principio a fin."},
+    {"nombre": "Ortodoncia invisible", "descripcion": "Alineá tus dientes sin que se note el tratamiento en tu día a día."},
+    {"nombre": "Implantes dentales", "descripcion": "Recuperá piezas perdidas con implantes y rehabilitación completa."},
+    {"nombre": "Estética dental", "descripcion": "Blanqueamiento y mejoras estéticas para una sonrisa armoniosa."},
+    {"nombre": "ATM y bruxismo", "descripcion": "Diagnóstico y tratamiento de dolor mandibular, contracturas y desgaste."},
+    {"nombre": "Placas antirronquido", "descripcion": "Soluciones a medida para descansar mejor, vos y quien duerme al lado."}
+  ],
+  "razones": [
+    {"titulo": "Especialistas de verdad", "texto": "Profesionales con títulos de posgrado en las distintas ramas de la odontología, dedicados hace más de 20 años a la enseñanza universitaria."},
+    {"titulo": "Todo en un mismo lugar", "texto": "De la ortodoncia a los implantes, resolvés tu tratamiento completo sin ir de consultorio en consultorio."},
+    {"titulo": "Un ambiente que da tranquilidad", "texto": "Un consultorio cálido y confortable donde la cordialidad y el profesionalismo son los pilares de la atención."}
+  ]
+}

@@ -1,2 +1,5 @@
 .DS_Store
 node_modules
+
+# el CSV maestro de prospects no va al repo (es publico)
+*.csv

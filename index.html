@@ -152,14 +152,16 @@ header{display:flex;justify-content:space-between;align-items:center;padding:26p
   font-size:clamp(38px,6vw,80px);line-height:.98;max-width:14ch;
 }
 .metodo .encabezado em{font-style:italic}
-.reglas{margin-top:80px;display:grid;gap:0}
+/* --n manda: la columna del numero se calcula desde su propio tamano,
+   asi 'Cuatro' nunca puede pisar el titulo en ningun ancho */
+.reglas{margin-top:80px;display:grid;gap:0;--n:clamp(44px,6vw,84px)}
 .regla{
-  display:grid;grid-template-columns:minmax(90px,160px) 1fr;gap:30px;align-items:baseline;
+  display:grid;grid-template-columns:calc(var(--n)*3.1) 1fr;gap:30px;align-items:baseline;
   padding:40px 0;border-top:1px solid rgba(255,255,255,.28);
 }
 .regla .n{
   font-family:'Fraunces',serif;font-style:italic;font-weight:340;
-  font-size:clamp(44px,6vw,84px);line-height:1;color:var(--klein-claro);
+  font-size:var(--n);line-height:1;color:var(--klein-claro);white-space:nowrap;
 }
 .regla h3{
   font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.015em;
@@ -231,7 +233,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
   .precio-caja{grid-template-columns:1fr}
   .precio-intro{border-right:none;border-bottom:4px solid var(--tinta)}
   .precio-col + .precio-col{border-left:none;border-top:1px solid #dcdcdc}
-  .regla{grid-template-columns:70px 1fr;gap:18px}
+  .regla{gap:18px}
 }
 @media(max-width:520px){
   body{font-size:16px}

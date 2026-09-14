@@ -220,15 +220,17 @@ footer.pie a{color:var(--ink);text-decoration:none}
 }
 .wsp-flotante:hover{background:#1FBA59}
 .wsp-flotante svg{width:38px;height:38px;fill:#0A2E1A;flex-shrink:0}
-.hero-foto{margin:8px 0 0}
-.hero-foto img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 34%;display:block;border-radius:26px}
+.hero-foto{margin:14px auto 0;max-width:470px;text-align:center}
+.hero-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;display:block;border-radius:28px}
+.hero-foto figcaption{margin-top:14px;font-size:15px;font-weight:700;color:var(--gris)}
 .galeria{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:20px}
 @media(max-width:860px){.galeria{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){
   .wsp-flotante{height:64px;padding:0 22px 0 16px;font-size:16px;bottom:18px;right:18px;width:auto;justify-content:flex-start}
   .wsp-flotante svg{width:34px;height:34px}
-  .hero-foto img{aspect-ratio:16/11;border-radius:20px}
+  .hero-foto{max-width:none}
+  .hero-foto img{aspect-ratio:4/5;border-radius:22px}
   .galeria{grid-template-columns:1fr}
   .logo .sello{width:48px;height:48px}
 }
@@ -236,6 +238,10 @@ footer.pie a{color:var(--ink);text-decoration:none}
 .banda-estudio{margin:0 0 72px}
 .banda-estudio img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 42%;display:block;border-radius:26px}
 @media(max-width:600px){.banda-estudio{margin-bottom:48px}.banda-estudio img{aspect-ratio:4/3;border-radius:20px}}
+.foto-estudio{max-width:400px;margin:0 auto 72px;text-align:center}
+.foto-estudio img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 45%;display:block;border-radius:18px}
+.foto-estudio figcaption{margin-top:10px;font-size:14px;color:var(--gris)}
+@media(max-width:600px){.foto-estudio{margin-bottom:48px;max-width:300px}}
 </style>
 </head>
 <body>
@@ -255,7 +261,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
     <div class="acciones"><a class="btn wsp" href="https://wa.me/541145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.1.6 4.1 1.6 5.9L4 29l8.4-1.6c1.7.9 3.6 1.4 5.6 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-5 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.5 4.5-9.9 10-9.9s10 4.4 10 9.9-4.4 9.9-9.9 9.9zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>Escribir por WhatsApp</a><span class="o">o llamá al <a href="tel:+541145690939">(011) 4569-0939</a></span></div>
     <div class="chips"><span class="chip"><i></i>Total confidencialidad</span><span class="chip"><i></i>Más de 30 años</span><span class="chip"><i></i>Abogada UBA</span><span class="chip"><i></i>CABA y Berazategui</span></div>
   </section>
-  <figure class="hero-foto"><img src="/demos/estudio-ali/fotos/estudio-amplio.jpg" alt="El estudio en Lavalle 1546"></figure>
+  <figure class="hero-foto"><img src="/demos/estudio-ali/fotos/marcela-retrato.jpg" alt="Dra. Marcela A. Ali, titular del estudio"><figcaption>Dra. Marcela A. Ali · Titular del Estudio</figcaption></figure>
   <div class="chat-wrap" id="acerca">
     <div class="foto" style="margin:0 auto"><img src="/demos/estudio-ali/fotos/marcela-consulta.jpg" alt="La Dra. Ali atendiendo una consulta"></div>
     <div class="chat-texto"><h2>Nuestra Misión</h2><p>Nuestro compromiso es ejercer la profesión con seriedad y creatividad, dentro del contexto que nos imponen las normas vigentes y los principios éticos que rigen nuestra conducta. Nuestros clientes son quienes finalmente califican la calidad de nuestros servicios, por lo que establecer relaciones de largo plazo con ellos es nuestro mayor éxito.</p>
@@ -284,7 +290,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
   <div class="promesa"><span class="tick">✓</span><span><b>Ofrecemos consultas gratuitas para los trabajadores.</b> Defendemos los derechos de nuestros clientes.</span></div>
 </section></div></div>
 <div class="wrap"><section class="quien" id="titular">
-  <div class="foto"><img src="/demos/estudio-ali/fotos/marcela-retrato.jpg" alt="Dra. Marcela A. Ali, titular del estudio"></div>
+  <div class="foto"><img src="/demos/estudio-ali/fotos/marcela-sentada.jpg" alt="La Dra. Ali en el estudio"></div>
   <div><h2>Titular del Estudio</h2><p class="rol">Dra. Marcela A. Ali · Abogada</p><p class="bio">La Doctora Marcela Ali es la titular de Ali &amp; Asociados. Es abogada, recibida en la Universidad de Buenos Aires. Sus áreas de especialización son el Derecho Laboral y el Derecho Civil. Ejerce la profesión hace más de 30 años, y ha cursado una maestría en Derecho Laboral.</p><p class="bio">En el año 1992 comienza a trabajar como abogada en prestigiosos estudios de la Ciudad Autónoma de Buenos Aires, hasta que en el año 2000 decide fundar el Estudio Ali &amp; Asociados, comprometida con la defensa de los derechos de sus clientes.</p>
     <div class="hechos"><div class="hecho"><b>+30 años</b><span>ejerciendo la profesión</span></div><div class="hecho"><b>UBA</b><span>recibida en 1992</span></div><div class="hecho"><b>Maestría</b><span>en Derecho Laboral</span></div><div class="hecho"><b>Desde 2000</b><span>al frente del estudio</span></div></div>
   </div>
@@ -295,6 +301,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
     <div class="sedes"><div class="sede"><span class="chip"><i></i>Casa central</span><h3>Lavalle 1546</h3><p>CABA</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Lavalle%201546%2C%20CABA" target="_blank" rel="noopener">Cómo llegar →</a></div><div class="sede"><span class="chip"><i></i>Sede</span><h3>Av. Antártida Argentina 644</h3><p>Sourigues</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Av.%20Ant%C3%A1rtida%20Argentina%20644%2C%20Sourigues%2C%20Berazategui" target="_blank" rel="noopener">Cómo llegar →</a></div><div class="sede"><span class="chip"><i></i>Sede</span><h3>Calle 10 4719</h3><p>Berazategui</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Calle%2010%204719%2C%20Berazategui" target="_blank" rel="noopener">Cómo llegar →</a></div></div>
     <p class="horario"><b>Horario:</b> 09:00 a 18:00 · <b>Teléfono:</b> <a href="tel:+541145690939">(011) 4569-0939</a> · <b>Mail de contacto:</b> <a href="mailto:m.ali@estudioali.com.ar">m.ali@estudioali.com.ar</a></p>
   </section>
+  <figure class="foto-estudio"><img src="/demos/estudio-ali/fotos/estudio-amplio.jpg" alt="El estudio en Lavalle 1546"><figcaption>El estudio, en Lavalle 1546</figcaption></figure>
   <section class="cierre" id="contacto"><div class="cierre-caja">
     <h2>Comunícate con nosotros</h2>
     <p>Envíanos tu consulta. Ofrecemos consultas gratuitas para los trabajadores.</p>

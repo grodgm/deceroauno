@@ -39,7 +39,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.93);backdro
 header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;gap:16px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:17px;letter-spacing:-.02em}
 .logo .sello{width:60px;height:60px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
-.logo small{display:block;font-size:12px;font-weight:600;color:var(--gris);letter-spacing:0}
+.logo small{display:block;font-size:12px;font-weight:600;color:var(--gris);letter-spacing:0;white-space:nowrap}
 nav.menu{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--gris)}
 nav.menu a{text-decoration:none}
 nav.menu a:hover{color:var(--ink)}
@@ -112,9 +112,7 @@ section{padding:80px 0}
 
 /* quién */
 .quien{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center}
-.foto{aspect-ratio:4/5;border-radius:36px;background:linear-gradient(150deg,#A66F3A 0%,#7A4C1A 50%,#3B2A16 100%);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:26px;color:rgba(255,255,255,.85);font-size:13.5px;line-height:1.4;max-width:440px}
-.foto::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(200,150,90,.35);top:-20%;right:-15%}
-.foto::after{content:"";position:absolute;width:45%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.12);bottom:-10%;left:-10%}
+.foto{aspect-ratio:4/5;border-radius:28px;position:relative;overflow:hidden;background:var(--suave);max-width:440px}
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;z-index:1}
 .quien h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
 .quien .rol{margin-top:8px;font-weight:700;color:var(--verde-2)}
@@ -223,7 +221,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
 .wsp-flotante:hover{background:#1FBA59}
 .wsp-flotante svg{width:38px;height:38px;fill:#0A2E1A;flex-shrink:0}
 .hero-foto{margin:8px 0 0}
-.hero-foto img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 38%;display:block;border-radius:26px}
+.hero-foto img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 34%;display:block;border-radius:26px}
 .galeria{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .galeria img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:20px}
 @media(max-width:860px){.galeria{grid-template-columns:1fr 1fr}}
@@ -236,7 +234,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
 }
 
 .banda-estudio{margin:0 0 72px}
-.banda-estudio img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center 60%;display:block;border-radius:26px}
+.banda-estudio img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 42%;display:block;border-radius:26px}
 @media(max-width:600px){.banda-estudio{margin-bottom:48px}.banda-estudio img{aspect-ratio:4/3;border-radius:20px}}
 </style>
 </head>
@@ -244,7 +242,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
 
 <div class="prop-bar"><span>Propuesta <b>B · Cercana</b> de 2 para Estudio Ali &amp; Asociados</span><nav><a href="/demos/estudio-ali/a">A</a><a class="on" href="/demos/estudio-ali/b">B</a><a href="/demos/estudio-ali">Ver las dos</a></nav></div>
 <header><div class="wrap">
-  <a class="logo" href="#"><img class="sello" src="/demos/estudio-ali/fotos/isologo.jpg" alt="Estudio Jurídico Ali &amp; Asociados"><span>Estudio Ali &amp; Asociados<small>Derecho Laboral A.R.T</small></span></a>
+  <a class="logo" href="#"><img class="sello" src="/demos/estudio-ali/fotos/isologo.jpg" alt="Estudio Jurídico Ali &amp; Asociados"><span>Estudio Ali &amp; Asociados<small>Derecho Laboral · A.R.T</small></span></a>
   <nav class="menu"><a href="#areas">Áreas de práctica</a><a href="#acerca">Acerca de</a><a href="#titular">Titular</a><a href="#sedes">Sedes</a></nav>
   <a class="btn wsp" href="https://wa.me/541145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Consultar</a>
 </div></header>
@@ -253,11 +251,11 @@ footer.pie a{color:var(--ink);text-decoration:none}
   <section class="hero">
     <span class="chip"><i></i>Consultas gratuitas para los trabajadores</span>
     <h1>Protegiendo tus derechos laborales <span>con experiencia y dedicación.</span></h1>
-    <p class="lead">Estudio Jurídico Ali &amp; Asociados, especializado en Derecho Laboral y A.R.T. Defendemos los derechos de nuestros clientes y ofrecemos consultas gratuitas para los trabajadores.</p>
+    <p class="lead">Estudio Jurídico Ali &amp; Asociados, especializado en Derecho Laboral y A.R.T.</p>
     <div class="acciones"><a class="btn wsp" href="https://wa.me/541145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.1.6 4.1 1.6 5.9L4 29l8.4-1.6c1.7.9 3.6 1.4 5.6 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-5 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.5 4.5-9.9 10-9.9s10 4.4 10 9.9-4.4 9.9-9.9 9.9zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>Escribir por WhatsApp</a><span class="o">o llamá al <a href="tel:+541145690939">(011) 4569-0939</a></span></div>
     <div class="chips"><span class="chip"><i></i>Total confidencialidad</span><span class="chip"><i></i>Más de 30 años</span><span class="chip"><i></i>Abogada UBA</span><span class="chip"><i></i>CABA y Berazategui</span></div>
   </section>
-  <figure class="hero-foto"><img src="/demos/estudio-ali/fotos/marcela-reunion.jpg" alt="La Dra. Ali con una clienta y un colaborador del estudio"></figure>
+  <figure class="hero-foto"><img src="/demos/estudio-ali/fotos/estudio-amplio.jpg" alt="El estudio en Lavalle 1546"></figure>
   <div class="chat-wrap" id="acerca">
     <div class="foto" style="margin:0 auto"><img src="/demos/estudio-ali/fotos/marcela-consulta.jpg" alt="La Dra. Ali atendiendo una consulta"></div>
     <div class="chat-texto"><h2>Nuestra Misión</h2><p>Nuestro compromiso es ejercer la profesión con seriedad y creatividad, dentro del contexto que nos imponen las normas vigentes y los principios éticos que rigen nuestra conducta. Nuestros clientes son quienes finalmente califican la calidad de nuestros servicios, por lo que establecer relaciones de largo plazo con ellos es nuestro mayor éxito.</p>
@@ -297,7 +295,6 @@ footer.pie a{color:var(--ink);text-decoration:none}
     <div class="sedes"><div class="sede"><span class="chip"><i></i>Casa central</span><h3>Lavalle 1546</h3><p>CABA</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Lavalle%201546%2C%20CABA" target="_blank" rel="noopener">Cómo llegar →</a></div><div class="sede"><span class="chip"><i></i>Sede</span><h3>Av. Antártida Argentina 644</h3><p>Sourigues</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Av.%20Ant%C3%A1rtida%20Argentina%20644%2C%20Sourigues%2C%20Berazategui" target="_blank" rel="noopener">Cómo llegar →</a></div><div class="sede"><span class="chip"><i></i>Sede</span><h3>Calle 10 4719</h3><p>Berazategui</p><a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Calle%2010%204719%2C%20Berazategui" target="_blank" rel="noopener">Cómo llegar →</a></div></div>
     <p class="horario"><b>Horario:</b> 09:00 a 18:00 · <b>Teléfono:</b> <a href="tel:+541145690939">(011) 4569-0939</a> · <b>Mail de contacto:</b> <a href="mailto:m.ali@estudioali.com.ar">m.ali@estudioali.com.ar</a></p>
   </section>
-  <figure class="banda-estudio"><img src="/demos/estudio-ali/fotos/estudio-recepcion.jpg" alt="El estudio en Lavalle 1546"></figure>
   <section class="cierre" id="contacto"><div class="cierre-caja">
     <h2>Comunícate con nosotros</h2>
     <p>Envíanos tu consulta. Ofrecemos consultas gratuitas para los trabajadores.</p>

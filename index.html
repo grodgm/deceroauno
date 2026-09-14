@@ -258,14 +258,58 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
   .precio-intro,.precio-col{padding:28px 22px}
   .final{padding:80px 0 90px}
 }
+
+/* ---------- WhatsApp: verde y glifo oficiales ---------- */
+.btn.wsp,.header-cta.wsp{display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.btn.wsp{background:#25D366;color:#0A2E1A}
+.btn.wsp:hover{background:#1FBA59;color:#0A2E1A}
+.btn.wsp svg{width:22px;height:22px;fill:#0A2E1A;flex-shrink:0}
+.header-cta.wsp{border-bottom:none;background:#25D366;color:#0A2E1A;padding:11px 18px;border-radius:999px}
+.header-cta.wsp:hover{background:#1FBA59;color:#0A2E1A}
+.header-cta.wsp svg{width:18px;height:18px;fill:#0A2E1A;flex-shrink:0}
+.wsp-flotante{
+  position:fixed;bottom:24px;right:24px;z-index:80;
+  display:flex;align-items:center;gap:11px;text-decoration:none;
+  background:#25D366;color:#0A2E1A;font-weight:700;font-size:16px;
+  height:62px;padding:0 24px 0 18px;border-radius:999px;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+}
+.wsp-flotante:hover{background:#1FBA59}
+.wsp-flotante svg{width:32px;height:32px;fill:#0A2E1A;flex-shrink:0}
+@media(max-width:520px){
+  .wsp-flotante{height:58px;padding:0 20px 0 15px;font-size:15px;bottom:16px;right:16px}
+  .wsp-flotante svg{width:28px;height:28px}
+  .header-cta.wsp{padding:9px 13px;font-size:12.5px;gap:7px}
+  .header-cta.wsp svg{width:16px;height:16px}
+}
 </style>
+
+<!-- Medicion. Reemplazar los dos IDs por los reales antes de encender la campana:
+     G-XXXXXXXXXX  = Google Analytics 4 (analytics.google.com)
+     AW-XXXXXXXXX  = Google Ads (Herramientas > Conversiones)
+     y AW-XXXXXXXXX/YYYYYYYY = la etiqueta de la conversion "Contacto WhatsApp" -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'AW-XXXXXXXXX');
+  // cada clic a WhatsApp cuenta como conversion y dice desde que boton salio
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-conv]');
+    if (!a) return;
+    gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/YYYYYYYY'});
+    gtag('event', 'contacto_whatsapp', {'boton': a.getAttribute('data-conv')});
+  });
+</script>
 </head>
 <body>
 
 <div class="wrap">
   <header role="banner">
     <a class="logo" href="#">de cero <em>a uno</em></a>
-    <a class="header-cta" href="#demo">Ver una demo gratis</a>
+    <a class="header-cta wsp" href="https://wa.me/5491131160030?text=Hola!%20Quiero%20la%20demo%20gratis%20de%20mi%20web.%20Mi%20sitio%20actual%20es:%20" target="_blank" rel="noopener" data-conv="wsp-header"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg>Pedir mi demo gratis</a>
   </header>
 </div>
 
@@ -279,7 +323,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
       <span class="sub">Para profesionales y pymes que invierten en Google Ads y merecen una web a la altura de esa inversión.</span>
     </p>
     <div class="cta-row">
-      <a class="btn" href="#demo">Quiero mi demo gratis</a>
+      <a class="btn wsp" href="https://wa.me/5491131160030?text=Hola!%20Quiero%20la%20demo%20gratis%20de%20mi%20web.%20Mi%20sitio%20actual%20es:%20" target="_blank" rel="noopener" data-conv="wsp-hero"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg>Quiero mi demo gratis</a>
       <span class="cta-note">En 72 horas la tenés en tu WhatsApp. Sin compromiso.</span>
     </div>
   </section>
@@ -342,7 +386,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
 
 <div class="wrap">
   <section class="prueba" id="proceso">
-    <h2>Si llegaste acá desde un mail nuestro, <em>ya viste cómo trabajamos.</em></h2>
+    <h2>No te mandamos un presupuesto. <em>Te mandamos la web.</em></h2>
     <p class="explica">No mandamos presupuestos ni carpetas de "casos de éxito". Mandamos tu web nueva, hecha. Así funciona:</p>
     <div class="pasos-mail">
       <div class="paso-mail">
@@ -393,14 +437,16 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
   </section>
 
   <section class="final" id="demo">
-    <p class="kicker">¿Todavía no te llegó nuestro mail?</p>
-    <h2>Pedí la demo. <em>Sigue siendo gratis.</em></h2>
+    <p class="kicker">Empezá por acá:</p>
+    <h2>Pedí la tuya. <em>Es gratis.</em></h2>
     <p>Pasanos la dirección de tu web actual por WhatsApp y en 72 horas te mandamos tu versión nueva, terminada y funcionando. Después decidís con la web a la vista, no con una promesa.</p>
-    <a class="btn" href="https://wa.me/5491131160030?text=Hola!%20Quiero%20la%20demo%20gratis%20de%20mi%20web.%20Mi%20sitio%20actual%20es:%20" target="_blank" rel="noopener">Pedir mi demo gratis</a>
+    <a class="btn wsp" href="https://wa.me/5491131160030?text=Hola!%20Quiero%20la%20demo%20gratis%20de%20mi%20web.%20Mi%20sitio%20actual%20es:%20" target="_blank" rel="noopener" data-conv="wsp-final"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg>Pedir mi demo gratis</a>
     <p class="fineprint">Respondemos el mismo día, de lunes a viernes. Sin llamados de vendedores.</p>
   </section>
 </div>
 </main>
+
+<a class="wsp-flotante" href="https://wa.me/5491131160030?text=Hola!%20Quiero%20la%20demo%20gratis%20de%20mi%20web.%20Mi%20sitio%20actual%20es:%20" target="_blank" rel="noopener" data-conv="wsp-flotante" aria-label="Pedir mi demo gratis por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg><span>Pedir mi demo</span></a>
 
 <div class="wrap">
   <footer>

@@ -13,8 +13,9 @@ Cuando Gonza pida "generá la demo para <URL>" o similar, seguí este flujo comp
 3. **Escribir `demos/<slug>/datos.json`** siguiendo exactamente la estructura de `demos/ortodoncia-salud/datos.json` (usarlo como referencia). Reglas inquebrantables:
    - Solo datos reales que aparezcan en la web del prospect. PROHIBIDO inventar cifras, años, cantidad de pacientes, reseñas o premios.
    - Si un dato no está (ej: WhatsApp), dejarlo vacío o poner "Consultar por teléfono".
-   - El copy se reescribe en tono cercano y profesional, voseo argentino, nunca se copia textual de su web.
-   - Elegir un color de acento acorde al rubro (salud: verdes azulados o azules; jurídico: azules profundos; estética: tonos cálidos sobrios). Nunca repetir el mismo color de la demo anterior.
+   - **Los textos van literales de su web actual**, sobre todo el titular y la bajada del hero. Lo único que cambia es el diseño y el orden, para que el prospect reconozca su voz y vea solo el cambio visual. No reescribir ni inventar frases.
+   - **Siempre usar sus fotos y su logo.** Nunca placeholders ni paneles de color si existe una foto real. Las fotos no están en el HTML crudo: hay que scrollear la página en el navegador y leer `document.images` (suelen vivir en `/wp-content/uploads/`). Guardarlas optimizadas en `demos/<slug>/fotos/` y referenciarlas con **ruta absoluta** desde la raíz, nunca relativa (Vercel usa `trailingSlash: false` y `../` rompe).
+   - Si el prospect tiene logo, **la paleta es la de su marca**, sacada del logo. Si no lo tiene, elegir un color de acento acorde al rubro y nunca repetir el de la demo anterior.
 
 4. **Generar**: `python3 generar_demo.py demos/<slug>/datos.json`
 

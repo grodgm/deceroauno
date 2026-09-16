@@ -2,6 +2,7 @@
 // Necesita dos variables de entorno en Vercel:
 //   RESEND_API_KEY  = la key de Resend
 //   AVISO_TO        = a que casilla llega el aviso (opcional, por defecto la de abajo)
+//   AVISO_IGNORAR_IPS = IPs separadas por coma que no generan aviso (opcional)
 
 const DESTINO_POR_DEFECTO = "gonzalo@papumba.com";
 const REMITENTE = "Avisos De Cero a Uno <avisos@escapadasba.com.ar>";
@@ -18,6 +19,11 @@ export default async function handler(req, res) {
   const { demo, evento } = req.body || {};
   if (!DEMOS.has(demo)) return res.status(400).json({ error: "demo desconocida" });
   if (!["abrio", "volvio"].includes(evento)) return res.status(400).json({ error: "evento desconocido" });
+
+  // IPs propias (Gonza, oficina) que no deben generar avisos: AVISO_IGNORAR_IPS="1.2.3.4, 5.6.7.8"
+  const ip = ((req.headers["x-forwarded-for"] || req.headers["x-real-ip"] || "") + "").split(",")[0].trim();
+  const ignorar = (process.env.AVISO_IGNORAR_IPS || "").split(",").map(s => s.trim()).filter(Boolean);
+  if (ip && ignorar.includes(ip)) return res.status(200).json({ ok: true, ignorado: "ip propia" });
 
   const key = process.env.RESEND_API_KEY;
   if (!key) return res.status(500).json({ error: "falta RESEND_API_KEY" });

@@ -7,6 +7,18 @@
   var slug = (location.pathname.match(/\/demos\/([^\/]+)/) || [])[1];
   if (!slug || slug.charAt(0) === "_") return;
 
+  /* Marca "soy yo": abrir cualquier demo una vez con ?yo=1 deja este
+     navegador excluido de avisos y del velo de 48 horas, para siempre.
+     Sirve para el propio Gonza y para quien el decida (una vez por dispositivo). */
+  var YO = "dca:yo";
+  try {
+    if (/[?&#]yo=1\b/.test(location.search + location.hash)) {
+      localStorage.setItem(YO, "1");
+      history.replaceState(null, "", location.pathname);
+    }
+    if (localStorage.getItem(YO) === "1") return;
+  } catch (e) {}
+
   var CLAVE = "dca:" + slug;
   var VENTANA = 48 * 60 * 60 * 1000;
   var ahora = Date.now();

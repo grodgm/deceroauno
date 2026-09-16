@@ -9,7 +9,7 @@ const REMITENTE = "Avisos De Cero a Uno <avisos@escapadasba.com.ar>";
 // solo avisamos de demos que existen, asi nadie usa el endpoint de pasarela
 const DEMOS = new Set([
   "estudio-ali", "sociedades-online", "garcia-caro",
-  "tejerina-anchorena", "cocuzza", "ortodoncia-salud",
+  "tejerina-anchorena", "cocuzza", "ortodoncia-salud", "happy-park",
 ]);
 
 export default async function handler(req, res) {

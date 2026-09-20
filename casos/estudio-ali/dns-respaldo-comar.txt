@@ -1,0 +1,27 @@
+Respaldo DNS de estudioali.com.ar
+Tomado el 2026-09-20 14:54
+
+--- NS ---
+  ns3.hostmar.com.
+  ns4.hostmar.com.
+--- A ---
+  200.58.112.128
+--- AAAA ---
+  2800:6c0:2::168
+--- CNAME ---
+--- MX ---
+  1 ASPMX.L.GOOGLE.COM.
+  5 ALT1.ASPMX.L.GOOGLE.COM.
+  10 ALT3.ASPMX.L.GOOGLE.COM.
+  5 ASPMX2.L.GOOGLE.COM.
+  10 ALT4.ASPMX.L.GOOGLE.COM.
+  5 ALT2.ASPMX.L.GOOGLE.COM.
+--- TXT ---
+  "v=spf1 include:comp.hostmar.com -all"
+--- SOA ---
+  ns3.hostmar.com. root.hostmar.com. 2026060200 28800 7200 2000000 86400
+
+--- subdominios habituales ---
+  www -> estudioali.com.ar. 200.58.112.128 
+  mail -> 200.58.112.128 
+  ftp -> 200.58.112.128 

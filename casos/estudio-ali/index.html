@@ -22,32 +22,32 @@
 body{font-family:'Inter',system-ui,sans-serif;background:var(--blanco);color:var(--tinta);font-size:17px;line-height:1.6}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 a{color:inherit}
-header{padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+header{padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .logo{font-family:'Fraunces',serif;font-weight:600;font-size:22px;text-decoration:none}
 .logo em{font-style:italic;color:var(--klein)}
-.hero{padding:26px 0 44px}
-.kicker{font-family:'Fraunces',serif;font-style:italic;font-size:19px;color:var(--klein)}
-h1{font-family:'Fraunces',serif;font-weight:340;letter-spacing:-.025em;font-size:clamp(38px,6vw,68px);line-height:1.02;margin-top:14px;max-width:18ch}
+.hero{padding:6px 0 0}
+.kicker{font-family:'Fraunces',serif;font-style:italic;font-size:17.5px;color:var(--klein)}
+h1{font-family:'Fraunces',serif;font-weight:340;letter-spacing:-.025em;font-size:clamp(32px,4.2vw,50px);line-height:1.04;margin-top:8px;max-width:22ch}
 h1 em{font-style:italic;color:var(--klein)}
-.lead{margin-top:22px;color:var(--gris);font-size:18px;max-width:56ch}
+.lead{margin-top:18px;color:var(--gris);font-size:17.5px;max-width:60ch}
 .regla{height:4px;background:var(--tinta)}
 .datos{display:grid;grid-template-columns:repeat(5,1fr);gap:26px;padding:30px 0}
 .datos b{font-family:'Fraunces',serif;font-weight:550;font-size:20px;display:block;letter-spacing:-.01em}
 .datos .de{color:var(--gris);font-size:14px;text-decoration:line-through}
 .datos .a{color:var(--klein);font-weight:700}
 .datos span.et{display:block;color:var(--gris);font-size:13.5px;margin-top:5px}
-section{padding:60px 0}
+section{padding:52px 0}
 h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em}
 h2 em{font-style:italic;color:var(--klein)}
 .sub{margin-top:10px;color:var(--gris);max-width:58ch}
 .pie{margin-top:14px;font-size:14.5px;color:var(--gris);max-width:62ch}
 
 /* comparador arrastrable */
-.comp{position:relative;--pos:50%;margin-top:32px;border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:#FAFAFA;aspect-ratio:var(--ar);touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.comp{position:relative;--pos:50%;margin-top:0;border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:#FAFAFA;aspect-ratio:var(--ar);touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .comp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
 .comp .antes{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
 .comp .barra{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;margin-left:-1.5px;background:var(--blanco);box-shadow:0 0 0 1px rgba(0,0,0,.28);pointer-events:none}
-.comp .tirador{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--blanco);box-shadow:0 2px 12px rgba(0,0,0,.3);display:grid;place-items:center;font-size:17px;color:var(--tinta);letter-spacing:-1px}
+.comp .tirador{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--blanco);box-shadow:0 2px 12px rgba(0,0,0,.32);display:grid;place-items:center}
 .comp .chip{position:absolute;top:14px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;pointer-events:none;backdrop-filter:blur(4px)}
 .comp .chip.izq{left:14px;background:rgba(243,243,243,.92);color:#5e5e5e}
 .comp .chip.der{right:14px;background:rgba(228,236,255,.92);color:var(--klein)}
@@ -56,8 +56,12 @@ h2 em{font-style:italic;color:var(--klein)}
 .comp.tomado .barra{box-shadow:0 0 0 1px rgba(0,0,0,.45)}
 .comp.tomado .tirador{transform:translate(-50%,-50%) scale(1.08)}
 .comp .tirador{transition:transform .12s ease}
-.ayuda{margin-top:12px;font-size:14px;color:var(--gris);display:flex;align-items:center;gap:8px}
+.ayuda{margin-top:14px;font-size:14px;color:var(--gris);display:flex;align-items:center;gap:8px}
 .cel-cont{max-width:360px;margin:0 auto}
+.barra-sup{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap;margin:14px 0 12px}
+.instruccion{font-size:15.5px;color:var(--gris)}
+.ver-web{font-family:'Inter',sans-serif;font-size:15.5px;font-weight:600;color:var(--klein);text-decoration:none;border-bottom:2px solid #C9D6F5;padding-bottom:1px;white-space:nowrap}
+.ver-web:hover{border-bottom-color:var(--klein)}
 footer{border-top:4px solid var(--tinta);padding:28px 0;font-size:14px;color:var(--gris);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
 @media(max-width:860px){
@@ -75,25 +79,20 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
 
   <section class="hero" style="padding-top:0">
     <p class="kicker">Estudio jurídico laboralista · CABA y Berazategui</p>
-    <h1>La misma información. <em>Otra web.</em></h1>
-    <p class="lead">Un estudio con más de 30 años de trayectoria y 4,9 de puntuación en Google, con una web que no dejaba ver nada de eso. No le cambiamos los textos: le cambiamos el orden y el diseño.</p>
-  </section>
-</div>
+    <h1>La misma información.<br><em>Otra web.</em></h1>
 
-
-<div class="wrap">
-  <section>
-    <h2>Arrastrá para ver <em>el cambio.</em></h2>
-    <p class="sub">A la izquierda la web que tenía. A la derecha la que tiene hoy. Es la misma pantalla, el mismo estudio y los mismos textos.</p>
-
+    <div class="barra-sup">
+      <p class="instruccion">Arrastrá la barra del medio para comparar.</p>
+      <a class="ver-web" href="https://www.estudioali.com" target="_blank" rel="noopener">Ver la web en estudioali.com &rarr;</a>
+    </div>
     <div class="comp" style="--ar:1440/900" tabindex="0" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Comparar la web anterior con la nueva en la computadora. Usá las flechas del teclado o arrastrá.">
       <img class="despues" src="/casos/estudio-ali/despues-escritorio.png" alt="La web nueva de Estudio Ali en la computadora">
       <img class="antes" src="/casos/estudio-ali/antes-escritorio.png" alt="La web anterior de Estudio Ali en la computadora">
       <span class="chip izq">Antes</span>
       <span class="chip der">Después</span>
-      <div class="barra"><span class="tirador" aria-hidden="true">‹›</span></div>
+      <div class="barra"><span class="tirador" aria-hidden="true"><svg width="17" height="13" viewBox="0 0 17 13" fill="none" aria-hidden="true"><path d="M6 1.5 1.5 6.5 6 11.5M11 1.5l4.5 5L11 11.5" stroke="#101010" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
     </div>
-    <p class="ayuda">Tomá la manija del medio y movela para los costados.</p>
+    <p class="ayuda">Un estudio con más de 30 años de trayectoria y 4,9 de puntuación en Google, con una web que no dejaba ver nada de eso. No le cambiamos los textos: le cambiamos el orden y el diseño.</p>
   </section>
 
   <section style="padding-top:0">
@@ -106,7 +105,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
         <img class="antes" src="/casos/estudio-ali/antes-celular.png" alt="La web anterior de Estudio Ali en el celular" loading="lazy">
         <span class="chip izq">Antes</span>
         <span class="chip der">Después</span>
-        <div class="barra"><span class="tirador" aria-hidden="true">‹›</span></div>
+        <div class="barra"><span class="tirador" aria-hidden="true"><svg width="17" height="13" viewBox="0 0 17 13" fill="none" aria-hidden="true"><path d="M6 1.5 1.5 6.5 6 11.5M11 1.5l4.5 5L11 11.5" stroke="#101010" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </div>
     </div>
     <p class="ayuda" style="justify-content:center">Entra el retrato, el titular completo y el botón de WhatsApp, todo sin scrollear.</p>
@@ -129,7 +128,7 @@ footer b{color:var(--tinta);font-family:'Fraunces',serif;font-weight:550}
 <div class="wrap">
   <footer>
     <div><b>De Cero a Uno</b> · deceroauno.com.ar</div>
-    <div>Capturas del 20 de septiembre de 2026</div>
+    <div>Capturas del 20 de septiembre de 2026 · <a href="https://www.estudioali.com" target="_blank" rel="noopener" style="color:var(--klein);font-weight:600">estudioali.com</a></div>
   </footer>
 </div>
 

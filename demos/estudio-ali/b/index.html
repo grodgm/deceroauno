@@ -52,9 +52,9 @@ h2.sec{font-size:clamp(30px,4vw,44px);font-weight:800;max-width:24ch}
 .prop-bar nav a:hover{border-color:#fff}
 
 header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:11px;padding-bottom:11px;gap:16px}
-.logo{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.02em}
-.logo .sello{width:82px;height:82px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:9px;padding-bottom:9px;gap:16px}
+.logo{display:flex;align-items:center;gap:15px;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.02em}
+.logo .sello{width:104px;height:104px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
 .logo small{display:block;font-size:12px;font-weight:600;color:var(--gris);letter-spacing:0;white-space:nowrap}
 nav.menu{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--gris)}
 nav.menu a{text-decoration:none}
@@ -248,7 +248,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
   .hero-foto{max-width:none}
   .hero-foto img{aspect-ratio:4/5;border-radius:22px}
   .galeria{grid-template-columns:1fr}
-  .logo .sello{width:62px;height:62px}
+  .logo .sello{width:74px;height:74px}
 }
 
 .banda-estudio{margin:0 0 72px}
@@ -296,14 +296,25 @@ footer.pie a{color:var(--ink);text-decoration:none}
 /* separador del hero: corto y despegado, para que no se lea como subrayado */
 .sep-hero{width:84px;height:4px;border-radius:999px;background:var(--ambar);margin:30px 0 0}
 /* el isologo, con mas presencia */
-.sello-cierre{width:96px;height:96px;object-fit:contain;display:block;margin:0 auto 22px;background:#fff;border-radius:50%;padding:12px;box-shadow:0 8px 26px rgba(22,22,22,.18)}
+.sello-cierre{width:140px;height:140px;object-fit:contain;display:block;margin:0 auto 22px;background:#fff;border-radius:50%;padding:12px;box-shadow:0 8px 26px rgba(22,22,22,.18)}
 .pie-marca{display:flex;align-items:center;gap:14px}
-.pie-marca img{width:62px;height:62px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
+.pie-marca img{width:88px;height:88px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
 @media(max-width:600px){
   .sep-hero{margin-top:24px;width:70px}
-  .sello-cierre{width:78px;height:78px;padding:10px;margin-bottom:18px}
-  .pie-marca img{width:52px;height:52px}
+  .sello-cierre{width:112px;height:112px;padding:12px;margin-bottom:18px}
+  .pie-marca img{width:70px;height:70px}
 }
+
+/* el isologo como marca de agua, presencia sin ruido */
+.marca-agua{position:relative;overflow:hidden}
+.marca-agua::before{
+  content:"";position:absolute;right:-90px;top:50%;transform:translateY(-50%);
+  width:520px;height:520px;pointer-events:none;z-index:0;
+  background:url("/demos/estudio-ali/fotos/isologo.jpg") no-repeat center/contain;
+  mix-blend-mode:multiply;opacity:.06;
+}
+.marca-agua>*{position:relative;z-index:1}
+@media(max-width:860px){.marca-agua::before{width:330px;height:330px;right:-110px;opacity:.05}}
 </style>
 <script type="application/ld+json">
 {
@@ -501,7 +512,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
      <figcaption><b>Dra. Marcela A. Ali</b><span>Titular del Estudio · Abogada (UBA)</span></figcaption>
    </figure>
   </section>
-  <div class="chat-wrap" id="acerca">
+  <div class="chat-wrap marca-agua" id="acerca">
     <div class="foto" style="margin:0 auto"><img loading="lazy" decoding="async" src="/demos/estudio-ali/fotos/marcela-reunion.jpg" alt="Consulta con la Dra. Ali por un despido en el Estudio Ali &amp; Asociados, Lavalle 1546, CABA"></div>
     <div class="chat-texto"><h2>Nuestra Misión</h2><p>Nuestro compromiso es ejercer la profesión con seriedad y creatividad, dentro del contexto que nos imponen las normas vigentes y los principios éticos que rigen nuestra conducta. Nuestros clientes son quienes finalmente califican la calidad de nuestros servicios, por lo que establecer relaciones de largo plazo con ellos es nuestro mayor éxito.</p>
       <ul><li><span class="tick">✓</span><span>El estudio Ali &amp; Asociados fue fundado por la Dra. Marcela A. Ali en el año 2000, quien luego de haber egresado de la Universidad de Buenos Aires en el año 1992, se especializó en derecho del trabajo.</span></li><li><span class="tick">✓</span><span>Ofrecemos consultas gratuitas para los trabajadores.</span></li></ul>

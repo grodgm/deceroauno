@@ -52,9 +52,9 @@ h2.sec{font-size:clamp(30px,4vw,44px);font-weight:800;max-width:24ch}
 .prop-bar nav a:hover{border-color:#fff}
 
 header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--borde)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:14px;padding-bottom:14px;gap:16px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:17px;letter-spacing:-.02em}
-.logo .sello{width:60px;height:60px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:11px;padding-bottom:11px;gap:16px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.02em}
+.logo .sello{width:82px;height:82px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
 .logo small{display:block;font-size:12px;font-weight:600;color:var(--gris);letter-spacing:0;white-space:nowrap}
 nav.menu{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--gris)}
 nav.menu a{text-decoration:none}
@@ -72,8 +72,8 @@ nav.menu a:hover{color:var(--ink)}
 /* hero */
 .hero{padding:60px 0 56px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;text-align:left}
 .hero h1{font-size:clamp(34px,4.1vw,52px);font-weight:800;max-width:19ch;margin:20px 0 0;line-height:1.05}
-.hero h1 span{color:var(--verde);position:relative;display:inline-block}
-.hero h1 span::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.18em;background:var(--ambar-2);z-index:-1;border-radius:4px}
+.hero h1 span{color:var(--verde)}
+
 .hero .lead{margin:20px 0 0;font-size:clamp(18px,1.5vw,20.5px);color:#4A443C;max-width:42ch}
 .hero .acciones{margin-top:28px;display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;align-items:center}
 .hero .acciones .o{font-size:15px;color:var(--gris)}
@@ -248,7 +248,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
   .hero-foto{max-width:none}
   .hero-foto img{aspect-ratio:4/5;border-radius:22px}
   .galeria{grid-template-columns:1fr}
-  .logo .sello{width:48px;height:48px}
+  .logo .sello{width:62px;height:62px}
 }
 
 .banda-estudio{margin:0 0 72px}
@@ -292,6 +292,18 @@ footer.pie a{color:var(--ink);text-decoration:none}
 .op .cuando{display:block;margin-top:2px;font-size:13.5px;color:var(--gris);font-weight:500}
 @media(max-width:960px){.ops-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.ops-grid{grid-template-columns:1fr}.puntaje{width:100%}}
+
+/* separador del hero: corto y despegado, para que no se lea como subrayado */
+.sep-hero{width:84px;height:4px;border-radius:999px;background:var(--ambar);margin:30px 0 0}
+/* el isologo, con mas presencia */
+.sello-cierre{width:96px;height:96px;object-fit:contain;display:block;margin:0 auto 22px;background:#fff;border-radius:50%;padding:12px;box-shadow:0 8px 26px rgba(22,22,22,.18)}
+.pie-marca{display:flex;align-items:center;gap:14px}
+.pie-marca img{width:62px;height:62px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
+@media(max-width:600px){
+  .sep-hero{margin-top:24px;width:70px}
+  .sello-cierre{width:78px;height:78px;padding:10px;margin-bottom:18px}
+  .pie-marca img{width:52px;height:52px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -479,6 +491,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
    <div class="hero-txt">
     <span class="chip"><i></i>Consultas gratuitas para los trabajadores</span>
     <h1>Protegiendo tus derechos laborales <span>con experiencia y dedicación.</span></h1>
+    <div class="sep-hero" aria-hidden="true"></div>
     <p class="lead">Estudio Jurídico Ali &amp; Asociados, especializado en Derecho Laboral y A.R.T.</p>
     <div class="acciones"><a class="btn wsp" href="https://wa.me/5491145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.1.6 4.1 1.6 5.9L4 29l8.4-1.6c1.7.9 3.6 1.4 5.6 1.4 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.3l-.4-.2-5 1 1-4.8-.2-.4c-1-1.6-1.5-3.4-1.5-5.2 0-5.5 4.5-9.9 10-9.9s10 4.4 10 9.9-4.4 9.9-9.9 9.9zm5.5-7.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>Escribir por WhatsApp</a></div>
     <div class="chips"><span class="chip"><i></i>Total confidencialidad</span><span class="chip"><i></i>Más de 30 años</span><span class="chip"><i></i>Abogada UBA</span><span class="chip"><i></i>CABA y Sourigues</span></div>
@@ -543,6 +556,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
   </section>
   <figure class="foto-estudio"><img loading="lazy" decoding="async" src="/demos/estudio-ali/fotos/estudio-amplio.jpg" alt="Estudio jurídico laboralista en Lavalle 1546, Ciudad de Buenos Aires"><figcaption>El estudio, en Lavalle 1546</figcaption></figure>
   <section class="cierre" id="contacto"><div class="cierre-caja">
+    <img class="sello-cierre" src="/demos/estudio-ali/fotos/isologo.jpg" alt="Estudio Ali &amp; Asociados, abogados laboralistas">
     <h2>Comunícate con nosotros</h2>
     <p>Envíanos tu consulta. Ofrecemos consultas gratuitas para los trabajadores.</p>
     <div class="acciones"><a class="btn ambar" href="https://wa.me/5491145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
@@ -551,7 +565,7 @@ footer.pie a{color:var(--ink);text-decoration:none}
 </div>
 </main>
 <footer class="pie"><div class="wrap">
-  <div><b>Estudio Ali &amp; Asociados</b> · Derecho Laboral A.R.T<br>Lavalle 1546, CABA · Av. Antártida Argentina 644, Sourigues</div>
+  <div class="pie-marca"><img src="/demos/estudio-ali/fotos/isologo.jpg" alt="Estudio Ali &amp; Asociados"><span><b>Estudio Ali &amp; Asociados</b> · Derecho Laboral A.R.T<br>Lavalle 1546, CABA · Av. Antártida Argentina 644, Sourigues</span></div>
   <div>Propuesta de diseño B · <a href="https://deceroauno.com.ar">De Cero a Uno</a></div>
 </div></footer>
 <a class="wsp-flotante" href="https://wa.me/5491145690939?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg><span>Consultar</span></a>

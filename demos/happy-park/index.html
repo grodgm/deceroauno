@@ -125,20 +125,59 @@ footer b{color:var(--tinta)}footer a{color:var(--tinta)}
  .flot{height:62px;padding:0 21px 0 15px;font-size:15.5px;bottom:18px;right:18px}
  .flot svg{width:32px;height:32px}
 }
+
+/* portada verde */
+.portada{position:relative;isolation:isolate;color:#fff;margin-bottom:0}
+.portada .fondo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(12,40,18,.86) 0%,rgba(14,44,20,.62) 45%,rgba(16,48,22,.18) 100%)}
+.portada .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding-top:64px;padding-bottom:64px}
+.lugar{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);padding:7px 14px;border-radius:999px;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.lugar svg{width:16px;height:16px;fill:#B9E37A}
+.lema{margin-top:18px;font-size:clamp(20px,2.1vw,25px);font-weight:800;font-style:italic;color:#FFE08A;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.portada h1{margin-top:8px;font-size:clamp(34px,3.9vw,54px);max-width:20ch;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.portada .lead{margin-top:16px;font-size:18.5px;max-width:52ch;color:rgba(255,255,255,.92)}
+.portada .acc{margin-top:26px;display:flex;gap:13px;flex-wrap:wrap}
+.portada .btn.out{color:#fff;border-color:rgba(255,255,255,.85)}
+.portada .btn.out:hover{background:#fff;color:var(--tinta)}
+.portada .nota{margin-top:14px;font-size:15px;color:rgba(255,255,255,.8)}
+.polas{position:relative;height:470px}
+.pola{position:absolute;margin:0;background:#fff;padding:9px 9px 0;border-radius:6px;box-shadow:0 16px 38px rgba(10,30,12,.38);width:210px;transition:transform .2s ease}
+.pola img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:3px}
+.pola figcaption{font-weight:800;font-size:15px;color:var(--madera2);text-align:center;padding:8px 2px 10px;line-height:1.2}
+.pola.p1{left:4%;top:6px;transform:rotate(-6deg)}
+.pola.p2{right:0;top:120px;transform:rotate(5deg)}
+.pola.p3{left:16%;bottom:-40px;transform:rotate(-2deg)}
+.pola:hover{transform:rotate(0) scale(1.05);z-index:3}
+@media(max-width:960px){
+ .portada{margin-bottom:84px}
+ .portada::before{background:linear-gradient(180deg,rgba(16,48,22,.42) 0%,rgba(14,44,20,.64) 45%,rgba(12,40,18,.9) 100%)}
+ .portada .wrap{grid-template-columns:1fr;gap:30px;padding-top:40px;padding-bottom:0}
+ .polas{height:auto;display:flex;justify-content:center;gap:8px;margin-bottom:-84px}
+ .pola{position:static;width:min(31%,180px);padding:6px 6px 0}
+ .pola figcaption{font-size:12px}
+ .pola.p2{transform:rotate(3deg) translateY(10px)}
+}
+@media(max-width:600px){
+ .portada .lead{font-size:17px}
+ .portada .acc .btn{width:100%}
+ .lugar{font-size:11px;letter-spacing:.03em;padding:6px 11px}
+}
 </style>
 </head>
 <body>
 <div class="expl">Exploración de diseño para <b>Happy Park</b>, no es una web definitiva. La preparó <a href="https://deceroauno.com.ar" target="_blank" rel="noopener">De Cero a Uno</a> para mostrar el cambio posible. Los textos y las fotos son los de su web actual.</div>
-<div class="banda"><img src="/demos/happy-park/fotos/banner-logo.jpg" alt="Happy Park. Donde el corazón de los chicos late más fuerte."></div>
 <header><div class="wrap">
  <a class="logo" href="#"><img src="/demos/happy-park/fotos/logo.png" alt="Happy Park"></a>
  <nav class="menu"><a href="#atracciones">Atracciones</a><a href="#fiesta">La fiesta</a><a href="#salon">Salón</a><a href="#contacto">Precios y Contacto</a></nav>
  <a class="btn wsp" href="https://wa.me/541130225661?text=Hola%20HappyPark" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.06 2.87 1.21 3.07.15.2 2.09 3.2 5.07 4.48.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.75 0-3.48-.47-4.99-1.36l-.36-.21-3.71.97.99-3.62-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.59 5.95L.07 24l6.33-1.66a11.86 11.86 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.16-3.48-8.4"/></svg>WhatsApp</a>
 </div></header>
 <main>
-<div class="wrap"><section class="hero">
- <div>
-  <p class="kicker">Olivos · Vicente López · Zona Norte</p>
+<section class="portada">
+ <img class="fondo" src="/demos/happy-park/fotos/jungla-plantas.jpg" alt="La Jungla Encantada de Happy Park, llena de plantas" fetchpriority="high" width="1100" height="771">
+ <div class="wrap">
+ <div class="txt">
+  <p class="lugar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>Olivos · Vicente López · Zona Norte</p>
+  <p class="lema">Donde el corazón de los chicos late más fuerte.</p>
   <h1>Salón de Fiestas y Atracciones Infantiles, en Olivos, Vicente López</h1>
   <p class="lead">Happy Park, Salón de Fiestas y Atracciones Infantiles, cubierto, rodeado de parque y naturaleza, con más de 25 años de trayectoria ininterrumpida en diversión y entretenimiento infantil.</p>
   <div class="acc">
@@ -147,12 +186,13 @@ footer b{color:var(--tinta)}footer a{color:var(--tinta)}
   </div>
   <p class="nota">Para disfrutar en familia. Para mayor información contáctese con nosotros.</p>
  </div>
- <div class="hero-fotos">
-  <img class="grande" src="/demos/happy-park/fotos/chicos-plumas.jpg" alt="Chicos en el Pueblo Indígena de Happy Park">
-  <img class="chica" src="/demos/happy-park/fotos/casita.jpg" alt="La casita de madera">
-  <img class="chica" src="/demos/happy-park/fotos/pergola.jpg" alt="El parque de Happy Park">
+ <div class="polas" aria-label="Momentos en Happy Park">
+  <figure class="pola p1"><img src="/demos/happy-park/fotos/plaza-hamaca.jpg" alt="Chicos riéndose en la plaza" width="1100" height="771"><figcaption>Plaza Happy Park</figcaption></figure>
+  <figure class="pola p2"><img src="/demos/happy-park/fotos/soga.jpg" alt="Una nena en la Soga de Tarzán" width="1100" height="771"><figcaption>La Soga de Tarzán</figcaption></figure>
+  <figure class="pola p3"><img src="/demos/happy-park/fotos/chicos-plumas.jpg" alt="Chicos disfrazados en el Pueblo Indígena" width="1100" height="700"><figcaption>Pueblo Indígena</figcaption></figure>
  </div>
-</section></div>
+</div>
+</section>
 <div class="conf"><div class="wrap">
  <div><b>Desde 1993</b><span>el 9 de Septiembre de 1993 abrió sus puertas Happy Park</span></div>
  <div><b>+25 años</b><span>de trayectoria ininterrumpida en diversión infantil</span></div>
